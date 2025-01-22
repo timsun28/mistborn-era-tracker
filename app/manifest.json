@@ -1,0 +1,24 @@
+{
+    "name": "Mistborn Reading Tracker",
+    "short_name": "Mistborn",
+    "icons": [
+        {
+            "src": "/web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#171717",
+    "background_color": "#171717",
+    "display": "standalone",
+    "orientation": "portrait",
+    "description": "Track your progress reading the Mistborn series",
+    "start_url": "/"
+}

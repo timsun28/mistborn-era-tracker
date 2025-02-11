@@ -1,6 +1,6 @@
 export const books = [
   { title: "Final Empire", pages: 672 },
-  { title: "Well of Ascension", pages: 800 },
+  { title: "Well of Ascension", pages: 780 },
   { title: "Hero of Ages", pages: 768 },
   { title: "Alloy of Law", pages: 336 },
   { title: "Shadows of Self", pages: 320 },

@@ -31,15 +31,17 @@ export default function Home() {
     const dailyGoal = calculateDailyGoal(remainingPages, daysRemaining);
 
     return (
-        <div className="min-h-screen bg-linear-to-b from-gray-900 to-gray-800 text-gray-100 py-8 px-4">
+        <div className="min-h-screen py-8 px-4">
             <div className="max-w-3xl mx-auto">
-                <h1 className="text-4xl font-bold text-center mb-8 text-amber-500">Mistborn Reading Tracker</h1>
+                <h1 className="text-4xl font-bold text-center mb-8 text-primary drop-shadow-md">
+                    Mistborn Reading Tracker
+                </h1>
                 <div className="grid gap-4 md:grid-cols-2">
                     {books.map((book, index) => (
-                        <Card key={book.title} className="bg-gray-800 border-gray-700">
+                        <Card key={book.title} className="border-border/50">
                             <CardContent className="pt-6">
                                 <div className="flex items-center space-x-2">
-                                    <Label htmlFor={`progress-${index}`} className="w-24 text-amber-500">
+                                    <Label htmlFor={`progress-${index}`} className="w-24 text-primary font-semibold">
                                         {book.title}:
                                     </Label>
                                     <div className="flex items-center flex-1">
@@ -50,9 +52,9 @@ export default function Home() {
                                             onChange={(e) => handleProgressChange(index, e.target.value)}
                                             min="0"
                                             max={book.pages}
-                                            className="bg-gray-700 text-gray-100 border-gray-600 flex-1"
+                                            className="bg-input/50 border-input text-foreground flex-1"
                                         />
-                                        <span className="text-sm text-gray-400 ml-2 min-w-[60px] text-right">
+                                        <span className="text-sm text-muted-foreground ml-2 min-w-[60px] text-right">
                                             / {book.pages}
                                         </span>
                                     </div>
@@ -61,27 +63,27 @@ export default function Home() {
                         </Card>
                     ))}
                 </div>
-                <Card className="mt-8 bg-gray-800 border-gray-700">
+                <Card className="mt-8 border-border/50">
                     <CardHeader>
-                        <CardTitle className="text-amber-500">Reading Goal</CardTitle>
+                        <CardTitle className="text-primary text-2xl text-center">Reading Goal</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-lg mb-2 flex justify-between">
-                            <span className="text-white">Remaining pages:</span>
+                        <p className="text-lg mb-2 flex justify-between border-b border-border/30 pb-2">
+                            <span className="text-foreground">Remaining pages:</span>
                             <span>
-                                <span className="font-bold text-amber-500">{remainingPages}</span>
-                                <span className="text-gray-400 ml-2">
+                                <span className="font-bold text-accent">{remainingPages}</span>
+                                <span className="text-muted-foreground ml-2">
                                     / {books.reduce((sum, book) => sum + book.pages, 0)}
                                 </span>
                             </span>
                         </p>
-                        <p className="text-lg mb-2 flex justify-between">
-                            <span className="text-white">Days until December 5, 2028:</span>
-                            <span className="font-bold text-amber-500">{daysRemaining}</span>
+                        <p className="text-lg mb-2 flex justify-between border-b border-border/30 pb-2">
+                            <span className="text-foreground">Days until December 5, 2028:</span>
+                            <span className="font-bold text-accent">{daysRemaining}</span>
                         </p>
-                        <p className="text-xl font-bold flex justify-between">
-                            <span className="text-white">Daily reading goal:</span>
-                            <span className="text-amber-500">{dailyGoal} pages</span>
+                        <p className="text-xl font-bold flex justify-between pt-2">
+                            <span className="text-foreground">Daily reading goal:</span>
+                            <span className="text-primary">{dailyGoal} pages</span>
                         </p>
                     </CardContent>
                 </Card>

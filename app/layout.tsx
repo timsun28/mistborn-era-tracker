@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
+import { Geist, Geist_Mono, Cinzel } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -9,6 +10,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
+
+const cinzel = Cinzel({
+    variable: "--font-cinzel",
     subsets: ["latin"],
 });
 
@@ -63,7 +69,20 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+            <body className={`${geistSans.variable} ${geistMono.variable} ${cinzel.className} antialiased`}>
+                <div className="background-image">
+                    <Image
+                        src="/fantasy-bg.png"
+                        alt=""
+                        aria-hidden="true"
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+                {children}
+            </body>
         </html>
     );
 }
